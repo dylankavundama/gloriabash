@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:gloriabash/Screen/DetailPost.dart';
+import 'package:gloriabash/Screen/Detail.dart';
 import 'package:gloriabash/Screen/Stories.dart';
 import '../Widget/showcarousel.dart';
 import '../Widget/Post.dart';

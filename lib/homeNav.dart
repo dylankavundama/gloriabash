@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gloriabash/Screen/homePage.dart';
-
-import 'package:gloriabash/Video/listVideo.dart';
+import 'package:gloriabash/Video/HomeVideo.dart';
 import 'package:gloriabash/about/about.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share/share.dart';
 import '../Audio/main.dart';
 
+// ignore: camel_case_types
 class homeNav extends StatefulWidget {
   const homeNav({Key? key}) : super(key: key);
 
@@ -74,7 +74,7 @@ class _homeNavState extends State<homeNav> {
                 const url =
                     'https://play.google.com/store/apps/details?id=com.gloriabash';
                 Share.share(
-                    "Telecharger l'application de Gloria Bash #La PATRONA \n$url");
+                    "Telecharger l'Application de Gloria Bash #La PATRONA \n$url");
               },
               child: const CircleAvatar(
                 backgroundColor: Colors.black,
@@ -100,7 +100,7 @@ class _homeNavState extends State<homeNav> {
         ),
         body: TabBarView(children: [
           const homePage(),
-          const ListVideo(),
+          const HomeVideo(),
           MyApp(),
           const About()
         ]),

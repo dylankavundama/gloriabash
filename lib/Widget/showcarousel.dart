@@ -7,18 +7,15 @@ class ShowCarouselPage extends StatefulWidget {
   @override
   State<ShowCarouselPage> createState() => _ShowCarouselPageState();
 }
-
 class _ShowCarouselPageState extends State<ShowCarouselPage> {
   @override
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 5), page);
   }
-
   page() {
     Navigator.pop(context);
   }
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;

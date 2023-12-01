@@ -1,19 +1,18 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:gloriabash/Video/video.dart';
+import 'package:gloriabash/Widget/VideoWidget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
-class Youtube extends StatefulWidget {
-  const Youtube({required this.videos, Key? key}) : super(key: key);
+class VideoLecture extends StatefulWidget {
+  const VideoLecture({required this.videos, Key? key}) : super(key: key);
   final String videos;
   @override
-  State<Youtube> createState() => _YoutubeState();
+  State<VideoLecture> createState() => _VideoLectureState();
 }
 
-class _YoutubeState extends State<Youtube> {
+class _VideoLectureState extends State<VideoLecture> {
   late YoutubePlayerController controller;
   List<dynamic> video = [];
   bool _isLoading = false;
@@ -129,12 +128,13 @@ class _YoutubeState extends State<Youtube> {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            Youtube(videos: video[index]['PostDetails']),
+                            VideoLecture(videos: video[index]['PostDetails']),
                       ));
                 },
-                child: PostVideoWidget(
+                child: VideoWidget(
                   screenHeight: screenH,
                   screenWidth: screenW,
+                  // ignore: prefer_interpolation_to_compose_strings
                   image: "https://tcnasbl.org/apn/postimages/" +
                       video[index]['PostImage'],
                   titre: video[index]['PostTitle'],

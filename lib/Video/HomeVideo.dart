@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:gloriabash/Video/youtube.dart';
-import 'video.dart';
+import 'package:gloriabash/Widget/VideoWidget.dart';
 import 'package:http/http.dart' as http;
 
-class ListVideo extends StatefulWidget {
-  const ListVideo({Key? key}) : super(key: key);
+class HomeVideo extends StatefulWidget {
+  const HomeVideo({Key? key}) : super(key: key);
 
   @override
-  State<ListVideo> createState() => _ListVideoState();
+  State<HomeVideo> createState() => _HomeVideoState();
 }
 
-class _ListVideoState extends State<ListVideo> {
+class _HomeVideoState extends State<HomeVideo> {
   List<dynamic> video = [];
   bool _isLoading = false;
 
@@ -48,7 +48,7 @@ class _ListVideoState extends State<ListVideo> {
             )
           : SingleChildScrollView(
               child: Column(
-                children:  List.generate(
+                children: List.generate(
                   video.length,
                   (index) => GestureDetector(
                     onTap: () {
@@ -56,11 +56,11 @@ class _ListVideoState extends State<ListVideo> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              Youtube(videos: video[index]['PostDetails']),
+                              VideoLecture(videos: video[index]['PostDetails']),
                         ),
                       );
                     },
-                    child: PostVideoWidget(
+                    child: VideoWidget(
                       screenHeight: screenH,
                       screenWidth: screenW,
                       // ignore: prefer_interpolation_to_compose_strings

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class PostWidget extends StatefulWidget {
   const PostWidget({
     Key? key,
@@ -56,7 +55,7 @@ class _PostWidgetState extends State<PostWidget> {
               color: Colors.white, fontSize: 14, fontWeight: FontWeight.normal),
         ),
         const Text(
-          'Lire plus...',
+          '...',
           textAlign: TextAlign.justify,
           maxLines: 2,
           style: TextStyle(

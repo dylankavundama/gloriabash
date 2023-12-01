@@ -14,7 +14,7 @@ class _ShowCarouselPageState extends State<ShowCarouselPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), page);
+    Timer(const Duration(seconds: 5), page);
   }
 
   page() {

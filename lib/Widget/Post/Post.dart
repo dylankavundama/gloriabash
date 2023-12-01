@@ -37,7 +37,6 @@ class _PostWidgetState extends State<PostWidget> {
       color: Colors.blue.shade400,
     );
     return Column(
-      
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -74,7 +73,7 @@ class _PostWidgetState extends State<PostWidget> {
           fit: BoxFit.cover,
         ),
         //aad bouton shared
-Padding(padding: EdgeInsets.only(top: 10))
+        const Padding(padding: EdgeInsets.only(top: 10))
       ],
     );
   }

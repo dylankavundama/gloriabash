@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:gloriabash/Widget/Video/video.dart';
+import 'package:gloriabash/Video/video.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';

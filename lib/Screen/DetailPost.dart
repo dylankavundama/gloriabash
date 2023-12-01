@@ -1,13 +1,11 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:gloriabash/Widget/Post/Post.dart';
 import 'package:http/http.dart' as http;
-
 import 'homePage.dart';
 
 class DetailPost extends StatefulWidget {
-  DetailPost(
+  const DetailPost(
       {required this.img,
       required this.detail,
       required this.date,
@@ -83,7 +81,7 @@ class _DetailPostState extends State<DetailPost> {
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const ScreenWelcome();
+                              return const homePage();
                             }));
                           },
                           child: Row(
@@ -144,14 +142,6 @@ class _DetailPostState extends State<DetailPost> {
                     Row(
                       children: [
                         SizedBox(width: 8),
-                        // Container(
-                        //   child: const CircleAvatar(
-                        //     backgroundImage: AssetImage("assets/asset/david.jpg"),
-                        //     radius: 50,
-                        //   ),
-                        //   height: 80,
-                        //   width: 30,
-                        // ),
                         const SizedBox(width: 10),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -191,7 +181,8 @@ class _DetailPostState extends State<DetailPost> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${widget.detail}',style: TextStyle(color: Colors.white),
+                      '${widget.detail}',
+                      style: TextStyle(color: Colors.white),
                       textAlign: TextAlign.justify,
                     ),
                     const SizedBox(
@@ -205,8 +196,9 @@ class _DetailPostState extends State<DetailPost> {
                         child: Text(
                           'AUTRE POST',
                           style: TextStyle(
-                            color: Colors.black,
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

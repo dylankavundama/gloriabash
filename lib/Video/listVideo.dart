@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:gloriabash/Widget/Video/youtube.dart';
+import 'package:gloriabash/Video/youtube.dart';
 import 'video.dart';
 import 'package:http/http.dart' as http;
 

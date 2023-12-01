@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:gloriabash/Video/listVideo.dart';
 import 'package:gloriabash/about/about.dart';
-import 'package:gloriabash/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share/share.dart';
 import '../Audio/main.dart';
-import '../Widget/Video/listVideo.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class homeNav extends StatefulWidget {
+  const homeNav({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<homeNav> createState() => _homeNavState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _homeNavState extends State<homeNav> {
   List<Tab> tablist = const [
     Tab(
       icon: FaIcon(
@@ -54,7 +54,6 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           brightness: Brightness.light,
           backgroundColor: Colors.black,
-          //   elevation: 0,
           title: Padding(
             padding: const EdgeInsets.only(right: 150),
             child: Text(
@@ -99,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                   .toList()),
         ),
         body: TabBarView(children: [
-          const ScreenWelcome(),
+          const homeNav(),
           const ListVideo(),
           MyApp(),
           const About()

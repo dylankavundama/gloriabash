@@ -1,6 +1,4 @@
-// ignore: file_names
-
-import '../model/post.dart';
+import 'package:gloriabash/Util/ModelPostStory.dart';
 
 List<Story> stories = [
   Story(idStorie: 1, img: 'assets/aa.jpg'),

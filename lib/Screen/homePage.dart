@@ -1,31 +1,24 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:gloriabash/DetailPost.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:gloriabash/json/postJson.dart';
-import '../showcarousel.dart';
-import 'Widget/Post/Post.dart';
+import 'package:gloriabash/Screen/DetailPost.dart';
+import 'package:gloriabash/Util/Stories.dart';
+
+import '../Util/showcarousel.dart';
+import '../Widget/Post/Post.dart';
 import 'package:http/http.dart' as http;
 // ignore: depend_on_referenced_packages
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
-  runApp(const MaterialApp(
-    home: ScreenWelcome(),
-  ));
-}
-
-class ScreenWelcome extends StatefulWidget {
-  const ScreenWelcome({Key? key}) : super(key: key);
+class homePage extends StatefulWidget {
+  const homePage({Key? key}) : super(key: key);
 
   @override
-  State<ScreenWelcome> createState() => _ScreenWelcomeState();
+  State<homePage> createState() => _homePageState();
 }
 
-class _ScreenWelcomeState extends State<ScreenWelcome> {
+class _homePageState extends State<homePage> {
   List<dynamic> post = [];
   bool _isLoading = false;
 
@@ -64,21 +57,16 @@ class _ScreenWelcomeState extends State<ScreenWelcome> {
       request: const AdRequest(),
       size: AdSize.banner,
       listener: BannerAdListener(
-        // Called when an ad is successfully received.
         onAdLoaded: (ad) {
           setState(() {
             _bannerAd = ad as BannerAd;
           });
         },
-        // Called when an ad request failed.
         onAdFailedToLoad: (ad, err) {
           ad.dispose();
         },
-        // Called when an ad opens an overlay that covers the screen.
         onAdOpened: (Ad ad) {},
-        // Called when an ad removes an overlay that covers the screen.
         onAdClosed: (Ad ad) {},
-        // Called when an impression occurs on the ad.
         onAdImpression: (Ad ad) {},
       ),
     ).load();

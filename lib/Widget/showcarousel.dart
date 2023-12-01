@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class ShowCarouselPage extends StatefulWidget {
-  ShowCarouselPage({required this.img, Key? key}) : super(key: key);
+  const ShowCarouselPage({required this.img, Key? key}) : super(key: key);
   final String img;
-
   @override
   State<ShowCarouselPage> createState() => _ShowCarouselPageState();
 }

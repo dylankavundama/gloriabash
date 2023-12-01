@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gloriabash/Screen/homePage.dart';
 
 import 'package:gloriabash/Video/listVideo.dart';
 import 'package:gloriabash/about/about.dart';
@@ -98,7 +99,7 @@ class _homeNavState extends State<homeNav> {
                   .toList()),
         ),
         body: TabBarView(children: [
-          const homeNav(),
+          const homePage(),
           const ListVideo(),
           MyApp(),
           const About()

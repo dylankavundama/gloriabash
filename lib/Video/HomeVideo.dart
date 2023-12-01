@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:gloriabash/Video/youtube.dart';
+import 'package:gloriabash/Video/VideoLecture.dart';
 import 'package:gloriabash/Widget/VideoWidget.dart';
 import 'package:http/http.dart' as http;
 
@@ -55,8 +55,10 @@ class _HomeVideoState extends State<HomeVideo> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              VideoLecture(videos: video[index]['PostDetails']),
+                          builder: (context) => VideoLecture(
+                            titre: video[index]['PostDetails'],
+                            videos: video[index]['PostDetails'],
+                          ),
                         ),
                       );
                     },

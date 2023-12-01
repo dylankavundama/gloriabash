@@ -99,42 +99,42 @@ class _homePageState extends State<homePage> {
                 padding: const EdgeInsets.all(0),
                 child: Column(
                   children: [
-                    Column(
-                      children: [
-                        SingleChildScrollView(
-                            child: CarouselSlider(
-                          items: stories
-                              .map(
-                                (e) => GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return ShowCarouselPage(
-                                        img: e.img,
-                                      );
-                                    }));
-                                  },
-                                  child: Image.asset(
-                                    e.img,
-                                    height: screenHeight * 0.38,
-                                    width: screenWidth,
-                                    fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          SingleChildScrollView(
+                              child: CarouselSlider(
+                            items: stories
+                                .map(
+                                  (e) => GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return ShowCarouselPage(
+                                          img: e.img,
+                                        );
+                                      }));
+                                    },
+                                    child: Image.asset(
+                                      e.img,
+                                      height: screenHeight * 0.38,
+                                      width: screenWidth,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
-                                ),
-                              )
-                              .toList(),
-                          options: CarouselOptions(autoPlay: true),
-                        )),
-                        SizedBox(
-                          height: screenHeight * 0.01,
-                        ),
-                      ],
+                                )
+                                .toList(),
+                            options: CarouselOptions(autoPlay: true),
+                          )),
+                        ],
+                      ),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: screenH * 0.04),
+                        SizedBox(height: screenH * 0.01),
                         Stack(
                           children: [
                             if (_bannerAd != null)

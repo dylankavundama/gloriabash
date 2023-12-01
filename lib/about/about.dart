@@ -56,16 +56,18 @@ class AboutState extends State<About> {
 
   @override
   Widget build(BuildContext context) {
-  return WillPopScope(
+    return WillPopScope(
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ListTile(
-              onTap: () {
+              onTap: () async {
+                const url =
+                    'https://play.google.com/store/apps/details?id=com.gloriabash';
                 Share.share(
-                    'https://play.google.com/store/apps/details?id=com.pcv');
+                    "Telecharger l'Application de Gloria Bash #La PATRONA \n$url");
               },
               title: const Text(
                 'Share',
@@ -218,6 +220,7 @@ class AboutState extends State<About> {
     super.dispose();
   }
 }
+
 Future<bool> _onPressButon(BuildContext context) async {
   bool? ext = await showDialog(
       context: context,

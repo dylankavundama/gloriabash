@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:gloriabash/Widget/Post.dart';
 import 'package:http/http.dart' as http;
+import 'package:share/share.dart';
 import 'homePage.dart';
 
 class DetailPost extends StatefulWidget {
@@ -55,7 +56,7 @@ class _DetailPostState extends State<DetailPost> {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 27),
+          padding: const EdgeInsets.only(top: 33),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +64,7 @@ class _DetailPostState extends State<DetailPost> {
               Stack(
                 children: [
                   Container(
-                    height: ScreenHeight * 0.4,
+                    height: ScreenHeight * 0.6,
                     width: ScreenWidth,
                     child: Image.network(
                       'https://tcnasbl.org/apn/postimages/${widget.img}',
@@ -93,11 +94,19 @@ class _DetailPostState extends State<DetailPost> {
                                 size: 25,
                               ),
                               Row(
-                                children: const [
-                                  Icon(
-                                    Icons.share,
-                                    color: Colors.white,
-                                    size: 20,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.share,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    onPressed: () async {
+                                      const url =
+                                          'https://play.google.com/store/apps/details?id=com.gloriabash';
+                                      Share.share(
+                                          "Telecharger l'Application de Gloria Bash #La PATRONA \n$url");
+                                    },
                                   ),
                                   SizedBox(
                                     width: 5,
@@ -118,75 +127,30 @@ class _DetailPostState extends State<DetailPost> {
                     left: 8,
                     right: 10,
                     child: Container(
-                      color: Colors.white,
+                      color: Colors.white60,
                       child: Text(
                         '${widget.tit}',
                         maxLines: 3,
                         style: const TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: ScreenHeight * 0.03,
-              ),
-              Container(
-                height: ScreenHeight * 0.06,
-                width: ScreenWidth,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        SizedBox(width: 8),
-                        const SizedBox(width: 10),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              'Date de publication ${widget.date}',
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 13),
-                            ),
-                            const Padding(padding: EdgeInsets.only(top: 5)),
-                            Text(
-                              'Le ${widget.date}',
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 11),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const Divider(
-                color: Colors.white,
-              ),
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(8),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '${widget.detail}',
-                      style: TextStyle(color: Colors.white),
-                      textAlign: TextAlign.justify,
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                      textAlign: TextAlign.left,
                     ),
                     const SizedBox(
-                      height: 19,
+                      height: 10,
                     ),
                     Container(
                       height: ScreenHeight * 0.02,

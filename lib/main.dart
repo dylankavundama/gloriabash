@@ -16,7 +16,7 @@ class gloriabash extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(),
+      theme: ThemeData(accentColor: Colors.white),
       home: const homeNav(),
     );
   }

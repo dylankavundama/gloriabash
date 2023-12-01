@@ -5,9 +5,12 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 class VideoLecture extends StatefulWidget {
-  const VideoLecture({required this.videos, Key? key}) : super(key: key);
+  const VideoLecture({required this.videos, required this.titre, Key? key})
+      : super(key: key);
   final String videos;
+  final String titre;
   @override
   State<VideoLecture> createState() => _VideoLectureState();
 }
@@ -38,8 +41,13 @@ class _VideoLectureState extends State<VideoLecture> {
     String url = widget.videos;
     controller = YoutubePlayerController(
         initialVideoId: YoutubePlayer.convertUrlToId(url)!,
-        flags:
-            const YoutubePlayerFlags(mute: false, loop: false, autoPlay: true));
+        flags: const YoutubePlayerFlags(
+            hideControls: false,
+            controlsVisibleAtStart: true,
+            hideThumbnail: false,
+            mute: false,
+            loop: false,
+            autoPlay: true));
   }
 
   @override
@@ -81,6 +89,7 @@ class _VideoLectureState extends State<VideoLecture> {
     super.dispose();
   }
 
+  bool _isFullScreen = false;
   @override
   Widget build(BuildContext context) {
     double screenH = MediaQuery.of(context).size.height;
@@ -89,33 +98,16 @@ class _VideoLectureState extends State<VideoLecture> {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(children: [
-          Container(
-            height: screenH * 0.4,
-            child: YoutubePlayer(
-              controller: controller,
-              showVideoProgressIndicator: true,
-            ),
+          YoutubePlayer(
+            controller: controller,
+            showVideoProgressIndicator: true,
           ),
-          const SizedBox(
-            height: 10,
+          Text(
+            'Vous Regarder ${widget.titre}',
+            style: TextStyle(color: Colors.white),
           ),
           SizedBox(
-            height: screenH * 0.11,
-          ),
-          Stack(
-            children: [
-              if (_bannerAd != null)
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: SizedBox(
-                      width: _bannerAd!.size.width.toDouble(),
-                      height: _bannerAd!.size.height.toDouble(),
-                      child: AdWidget(ad: _bannerAd!),
-                    ),
-                  ),
-                ),
-            ],
+            height: screenH * 0.04,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -127,8 +119,9 @@ class _VideoLectureState extends State<VideoLecture> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            VideoLecture(videos: video[index]['PostDetails']),
+                        builder: (context) => VideoLecture(
+                            videos: video[index]['PostDetails'],
+                            titre: video[index]['PostTitle']),
                       ));
                 },
                 child: VideoWidget(
@@ -143,6 +136,19 @@ class _VideoLectureState extends State<VideoLecture> {
             ),
           )
         ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _isFullScreen = !_isFullScreen;
+            controller.toggleFullScreenMode();
+          });
+        },
+        child: Icon(
+          _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+          color: Colors.black,
+          size: 30,
+        ),
       ),
     );
   }

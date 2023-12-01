@@ -3,10 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gloriabash/Screen/DetailPost.dart';
-import 'package:gloriabash/Util/Stories.dart';
-
-import '../Util/showcarousel.dart';
-import '../Widget/Post/Post.dart';
+import 'package:gloriabash/Screen/Stories.dart';
+import '../Widget/showcarousel.dart';
+import '../Widget/Post.dart';
 import 'package:http/http.dart' as http;
 // ignore: depend_on_referenced_packages
 import 'package:google_mobile_ads/google_mobile_ads.dart';

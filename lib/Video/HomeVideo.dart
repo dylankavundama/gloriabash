@@ -41,12 +41,13 @@ class _HomeVideoState extends State<HomeVideo> {
     double screenH = MediaQuery.of(context).size.height;
     double screenW = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: _isLoading
           ? const Center(
               child: CircularProgressIndicator(color: Colors.white),
             )
           : SingleChildScrollView(
+            padding: EdgeInsets.only(top: 3),
               child: Column(
                 children: List.generate(
                   video.length,
@@ -56,7 +57,7 @@ class _HomeVideoState extends State<HomeVideo> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => VideoLecture(
-                            titre: video[index]['PostDetails'],
+                            titre: video[index]['PostTitle'],
                             videos: video[index]['PostDetails'],
                           ),
                         ),

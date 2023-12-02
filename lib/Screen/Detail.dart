@@ -53,7 +53,7 @@ class _DetailPostState extends State<DetailPost> {
     double ScreenHeight = MediaQuery.of(context).size.height;
     double ScreenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 33),
@@ -139,35 +139,35 @@ class _DetailPostState extends State<DetailPost> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all((5)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '${widget.detail}',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                      style: TextStyle(color: Colors.black, fontSize: 15),
                       textAlign: TextAlign.left,
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 1,
                     ),
-                    Container(
-                      height: ScreenHeight * 0.02,
-                      width: ScreenWidth * 0.3,
-                      color: Colors.white,
-                      child: const Center(
-                        child: Text(
-                          'AUTRE POST',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: ScreenHeight * 0.02,
+                        width: ScreenWidth * 0.3,
+                        color: Colors.black,
+                        child: const Center(
+                          child: Text(
+                            'AUTRE POST',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 5,
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.vertical,

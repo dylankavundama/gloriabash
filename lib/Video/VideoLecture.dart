@@ -95,19 +95,22 @@ class _VideoLectureState extends State<VideoLecture> {
     double screenH = MediaQuery.of(context).size.height;
     double screenW = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(children: [
           YoutubePlayer(
             controller: controller,
             showVideoProgressIndicator: true,
           ),
-          Text(
-            'Vous Regarder ${widget.titre}',
-            style: TextStyle(color: Colors.white),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Vous Regarder ${widget.titre}',
+              style: TextStyle(color: Colors.black, fontSize: 15),
+            ),
           ),
           SizedBox(
-            height: screenH * 0.04,
+            height: screenH * 0.02,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,

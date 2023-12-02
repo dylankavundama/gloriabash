@@ -46,17 +46,20 @@ class _PostWidgetState extends State<PostWidget> {
             textAlign: TextAlign.start,
             '${widget.titre}',
             style: const TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: FadeInImage.assetNetwork(
-            height: screenH * 0.3,
-            width: screenW,
-            placeholder: 'assets/a.jpg',
-            image: 'https://tcnasbl.org/apn/postimages/${widget.image}',
-            fit: BoxFit.cover,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: FadeInImage.assetNetwork(
+              height: screenH * 0.3,
+              width: screenW,
+              placeholder: 'assets/a.jpg',
+              image: 'https://tcnasbl.org/apn/postimages/${widget.image}',
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         Padding(padding: EdgeInsets.only(top: 10)),

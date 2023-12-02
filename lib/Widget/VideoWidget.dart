@@ -25,12 +25,7 @@ class VideoWidget extends StatelessWidget {
           Center(
             child: Stack(
               children: [
-                // Image.network(
-                //   '${image}',
-                //   fit: BoxFit.cover,
-
-                // ),
-
+            
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: FadeInImage.assetNetwork(
@@ -59,7 +54,7 @@ class VideoWidget extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.black,
+            color: Colors.white,
             height: screenHeight * 0.04,
             width: screenWidth,
             child: Column(
@@ -77,7 +72,7 @@ class VideoWidget extends StatelessWidget {
                       maxLines: 2,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 14,
                       ),
                     ),

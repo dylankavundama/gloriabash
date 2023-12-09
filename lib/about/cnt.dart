@@ -9,7 +9,7 @@ enum CountdownState {
 
 /// A simple class that keeps track of a decrementing timer.
 class CountdownTimer extends ChangeNotifier {
-  final _countdownTime = 10;
+  final _countdownTime = 100;
   late var timeLeft = _countdownTime;
   var _countdownState = CountdownState.notStarted;
 

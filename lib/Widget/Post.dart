@@ -62,7 +62,7 @@ class _PostWidgetState extends State<PostWidget> {
             ),
           ),
         ),
-        Padding(padding: EdgeInsets.only(top: 10)),
+        const Padding(padding: EdgeInsets.only(top: 10)),
       ],
     );
   }

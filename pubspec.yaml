@@ -2,7 +2,7 @@ name: gloriabash
 description: A new Flutter project.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+7
+version: 1.0.0+8
 
 environment:
   sdk: '>=2.19.6 <3.0.0'

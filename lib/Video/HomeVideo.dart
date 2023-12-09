@@ -44,7 +44,7 @@ class _HomeVideoState extends State<HomeVideo> {
       backgroundColor: Colors.white,
       body: _isLoading
           ? const Center(
-              child: CircularProgressIndicator(color: Colors.white),
+              child: CircularProgressIndicator(color: Colors.black),
             )
           : SingleChildScrollView(
             padding: EdgeInsets.only(top: 3),

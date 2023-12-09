@@ -106,7 +106,7 @@ class _VideoLectureState extends State<VideoLecture> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               'Vous Regarder ${widget.titre}',
-              style: TextStyle(color: Colors.black, fontSize: 15),
+              style: const TextStyle(color: Colors.black, fontSize: 15),
             ),
           ),
           SizedBox(
@@ -120,12 +120,13 @@ class _VideoLectureState extends State<VideoLecture> {
               (index) => GestureDetector(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => VideoLecture(
-                            videos: video[index]['PostDetails'],
-                            titre: video[index]['PostTitle']),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VideoLecture(
+                          videos: video[index]['PostDetails'],
+                          titre: video[index]['PostTitle']),
+                    ),
+                  );
                 },
                 child: VideoWidget(
                   screenHeight: screenH,
@@ -137,7 +138,7 @@ class _VideoLectureState extends State<VideoLecture> {
                 ),
               ),
             ),
-          )
+          ),
         ]),
       ),
       floatingActionButton: FloatingActionButton(

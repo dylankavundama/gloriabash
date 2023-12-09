@@ -17,9 +17,16 @@ class homeNav extends StatefulWidget {
 
 class _homeNavState extends State<homeNav> {
   List<Tab> tablist = const [
+        Tab(
+      icon: FaIcon(
+        FontAwesomeIcons.music,
+        size: 15,
+        color: Colors.white,
+      ),
+    ),
     Tab(
       icon: FaIcon(
-        FontAwesomeIcons.home,
+        FontAwesomeIcons.intercom,
         size: 15,
         color: Colors.white,
       ),
@@ -31,13 +38,7 @@ class _homeNavState extends State<homeNav> {
         color: Colors.white,
       ),
     ),
-    Tab(
-      icon: FaIcon(
-        FontAwesomeIcons.music,
-        size: 15,
-        color: Colors.white,
-      ),
-    ),
+
     Tab(
       icon: FaIcon(
         FontAwesomeIcons.info,
@@ -99,9 +100,10 @@ class _homeNavState extends State<homeNav> {
                   .toList()),
         ),
         body: TabBarView(children: [
+                    MyApp(),
           const homePage(),
           const HomeVideo(),
-          MyApp(),
+
           const About()
         ]),
       ),

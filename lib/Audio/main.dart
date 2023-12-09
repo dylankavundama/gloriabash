@@ -9,6 +9,8 @@ import 'player/PositionSeekWidget.dart';
 import 'player/SongsSelector.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   AssetsAudioPlayer.setupNotificationsOpenAction((notification) {
     return true;
   });
@@ -167,16 +169,13 @@ class _MyAppState extends State<MyApp> {
     return source.firstWhere((element) => element.path == fromPath);
   }
 
-  final CountdownTimer _countdownTimer = CountdownTimer(10);
+  final CountdownTimer _countdownTimer = CountdownTimer(100);
 
   RewardedAd? _rewardedAd;
 
   final String _adUnitId = Platform.isAndroid
-      //  ? 'ca-app-pub-7329797350611067/5705877032'
-      //  : 'ca-app-pub-7329797350611067/5705877032';
-
-      ? ''
-      : '';
+      ? 'ca-app-pub-7329797350611067/5705877032'
+      : 'ca-app-pub-7329797350611067/5705877032';
 
   void _startNewGame() {
     _loadAd();
@@ -187,8 +186,7 @@ class _MyAppState extends State<MyApp> {
 
   final String _adUnitIdd = Platform.isAndroid
       ? 'ca-app-pub-7329797350611067/7630097138'
-      :
-       'ca-app-pub-7329797350611067/7630097138';
+      : 'ca-app-pub-7329797350611067/7630097138';
 
   @override
   Widget build(BuildContext context) {
@@ -260,7 +258,6 @@ class _MyAppState extends State<MyApp> {
                       builder: (context, Playing? playing) {
                     return Column(
                       children: <Widget>[
-         
                         _assetsAudioPlayer.builderLoopMode(
                           builder: (context, loopMode) {
                             return PlayerBuilder.isPlaying(
@@ -328,27 +325,27 @@ class _MyAppState extends State<MyApp> {
                                     },
                                     child: const Text('+10'),
                                   ),
-
-                                  
                                 ],
                               ),
-                                             Stack(
-                          children: [
-                            if (_bannerAd != null)
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: SafeArea(
-                                  child: SizedBox(
-                                    width: _bannerAd!.size.width.toDouble(),
-                                    height: _bannerAd!.size.height.toDouble(),
-                                    child: AdWidget(ad: _bannerAd!),
-                                  ),
-                                ),
+                              Stack(
+                                children: [
+                                  if (_bannerAd != null)
+                                    Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: SafeArea(
+                                        child: SizedBox(
+                                          width:
+                                              _bannerAd!.size.width.toDouble(),
+                                          height:
+                                              _bannerAd!.size.height.toDouble(),
+                                          child: AdWidget(ad: _bannerAd!),
+                                        ),
+                                      ),
+                                    ),
+                                ],
                               ),
-                          ],
-                        ),
 
-                       // Text("jffffffffffffffff",style: TextStyle(color: Colors.red),),
+                              // Text("jffffffffffffffff",style: TextStyle(color: Colors.red),),
                             ],
                           );
                         }),

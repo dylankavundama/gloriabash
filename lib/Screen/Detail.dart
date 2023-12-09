@@ -108,7 +108,7 @@ class _DetailPostState extends State<DetailPost> {
                                           "Telecharger l'Application de Gloria Bash #La PATRONA \n$url");
                                     },
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                 ],

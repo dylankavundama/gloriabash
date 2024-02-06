@@ -177,6 +177,8 @@ class _MyAppState extends State<MyApp> {
       ? 'ca-app-pub-7329797350611067/5705877032'
       : 'ca-app-pub-7329797350611067/5705877032';
 
+      //'ca-app-pub-7329797350611067/4191692802'
+
   void _startNewGame() {
     _loadAd();
     _countdownTimer.start();

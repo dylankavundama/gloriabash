@@ -54,13 +54,10 @@ class _VideoLectureState extends State<VideoLecture> {
   void deactivate() {
     controller.pause();
   }
-
   BannerAd? _bannerAd;
-
   final String _adUnitId = Platform.isAndroid
       ? 'ca-app-pub-7329797350611067/9692748148'
       : 'ca-app-pub-7329797350611067/9692748148';
-
   @override
   void _loadAd() async {
     BannerAd(

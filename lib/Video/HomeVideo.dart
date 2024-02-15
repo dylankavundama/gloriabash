@@ -47,7 +47,7 @@ class _HomeVideoState extends State<HomeVideo> {
               child: CircularProgressIndicator(color: Colors.black),
             )
           : SingleChildScrollView(
-            padding: EdgeInsets.only(top: 3),
+              padding: EdgeInsets.only(top: 3),
               child: Column(
                 children: List.generate(
                   video.length,

@@ -128,6 +128,7 @@ class _VideoLectureState extends State<VideoLecture> {
                 child: VideoWidget(
                   screenHeight: screenH,
                   screenWidth: screenW,
+     
                   // ignore: prefer_interpolation_to_compose_strings
                   image: "https://tcnasbl.org/apn/postimages/" +
                       video[index]['PostImage'],

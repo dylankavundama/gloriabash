@@ -66,7 +66,7 @@ class _HomeVideoState extends State<HomeVideo> {
                     child: VideoWidget(
                       screenHeight: screenH,
                       screenWidth: screenW,
-                      // ignore: prefer_interpolation_to_compose_strings
+         
                       image: "https://tcnasbl.org/apn/postimages/" +
                           video[index]['PostImage'],
                       titre: video[index]['PostTitle'],
